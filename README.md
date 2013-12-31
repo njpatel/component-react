@@ -46,6 +46,6 @@ builder.build(function (err, res) {
 ## License
 MIT
 
-## Author
+## Authors
 
-Neil Jagdish Patel <njpatel@gmail.com>
+* Neil Jagdish Patel <njpatel@gmail.com>
