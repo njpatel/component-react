@@ -1,0 +1,37 @@
+{
+  "name": "component-react",
+  "version": "0.1.0",
+  "description": "A plugin to transpile React jsx files for the component builder",
+  "keywords": [
+    "component",
+    "react",
+    "jsx"
+  ],
+  "author": {
+    "name": "Neil Jagdish Patel",
+    "email": "njpatel@gmail.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/njpatel/component-react.git"
+  },
+  "dependencies": {
+    "async": "~0.2.6",
+    "react-tools": "*"
+  },
+  "devDependencies" : {
+    "component-builder": "0.8.x"
+  },
+  "main": "index.js",
+  "readmeFilename": "README.md",
+  "bugs": {
+    "url": "https://github.com/njpatel/component-react/issues"
+  },
+  "_id": "component-react@0.1.0",
+  "dist": {
+    "shasum": ""
+  },
+  "_from": "component-react@*",
+  "_resolved": "https://registry.npmjs.org/component-react/-/component-react-0.1.0.tgz"
+}
