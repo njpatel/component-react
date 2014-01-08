@@ -37,7 +37,7 @@ module.exports = function(builder, options) {
       try {
         data = fs.readFileSync(orig, 'utf8');
       } catch(error) {
-        return cb(new Error('Error while reading ' + jsx + ':' + error));
+        return cb(new Error('Error while reading ' + orig + ':' + error));
       }
       
       var newData = transform(data);

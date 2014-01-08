@@ -1,6 +1,6 @@
 {
   "name": "component-react",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "A plugin to transpile React jsx files for the component builder",
   "keywords": [
     "component",
