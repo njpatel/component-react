@@ -183,7 +183,7 @@ require.relative = function(parent) {
     if (!i) i = 0;
     path = segs.slice(0, i + 1).join('/') + '/deps/' + path;
     return path;
-  ;
+  };
 
   /**
    * Check if module is defined at `path`.

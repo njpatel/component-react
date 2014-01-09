@@ -1,6 +1,6 @@
 # component-react
 
-A plugin to transpile [React](https://github.com/facebook/react) .jsx files for the component builder.
+A plugin to transpile [React](https://github.com/facebook/react) JS files ('.js or .jsx') for the component builder.
 
 ## Install
 
@@ -8,18 +8,26 @@ A plugin to transpile [React](https://github.com/facebook/react) .jsx files for 
 
 ## Usage
   
-Add your `.jsx` files to the `scripts` array in your `component.json`:
+Add your `.jsx` files to the `react` array in your `component.json`:
 
 ```javascript
 {
-	"scripts": [
-		"index.js",
+  "scripts": [
+    "index.js"
+  ],
+	"react": [
 		"button.jsx"
 	]
 }
 ```
 
-Use the plugin during your build process:
+Then either use the ```component``` command:
+
+```bash
+$ component build --use component-react
+```
+
+Or use the plugin during your custom build process:
 
 ```javascript
 var Builder = require('component-builder')

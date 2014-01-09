@@ -1,6 +1,6 @@
 {
   "name": "component-react",
-  "version": "0.1.1",
+  "version": "1.0.0",
   "description": "A plugin to transpile React jsx files for the component builder",
   "keywords": [
     "component",
@@ -28,7 +28,7 @@
   "bugs": {
     "url": "https://github.com/njpatel/component-react/issues"
   },
-  "_id": "component-react@0.1.0",
+  "_id": "component-react@1.0.0",
   "dist": {
     "shasum": ""
   },

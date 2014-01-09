@@ -6,47 +6,33 @@ var async = require('async')
   , transform = require('react-tools').transform
   ;
 
-function isJSX(filename) {
-  var ext = path.extname(filename);
-  
-  if (ext === '.jsx')
-    return true;
-  
-  return false;
-}
-
 module.exports = function(builder, options) {
   options = options || {};
 
   builder.hook('before scripts', function(builder, callback) {
-    if (!builder.config.scripts) {
-      return callback();
-    }
+    var files = builder.config.react;
 
-    // Make a copy of the list of files to parse
-    var files = builder.config.scripts.slice(0);
+    if (!files) return callback();
 
-    async.each(files, function(file, cb) {
+    if (!builder.config.scripts)
+      builder.config.scripts = [];
+
+    async.each(files, function(file, done) {
       var data = null
         , orig = builder.path(file)
         ;
-      
-      if (!isJSX(file))
-        return cb();
-      
+ 
       try {
         data = fs.readFileSync(orig, 'utf8');
       } catch(error) {
-        return cb(new Error('Error while reading ' + orig + ':' + error));
+        return done(new Error('Error while reading ' + orig + ':' + error));
       }
-      
+ 
       var newData = transform(data);
       var newFile = path.basename(file, path.extname(file)) + '.js';
       builder.addFile('scripts', newFile, newData);
-      builder.removeFile('scripts', file);
 
-      cb();
-
+      done();
     }, callback);
   });
 }
