@@ -1,0 +1,12 @@
+{
+  "name": "boot",
+  "dependencies": {
+    "njpatel/react": "*"
+  },
+  "main": "main.js",
+  "scripts": [ "main.js"],
+  "react": [
+    "main.js",
+    "button.js"
+  ]
+}

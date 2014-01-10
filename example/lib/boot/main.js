@@ -1,9 +1,15 @@
 /** @jsx React.DOM */
-var React = require('react-with-addons');
+var React = require('react');
+var Button = require('./button');
 
 var Main = React.createClass({
   render: function() {
-    return <h1>Hello, world!</h1>;
+    return (
+      <div>
+        <p>This should be rendered by React</p>
+        <Button />
+      </div>
+    );
   }
 });
 

@@ -1,0 +1,11 @@
+{
+  "name": "component-react-example",
+  "description": "An example of a basic project using component-react",
+  "repository": "git@github.com:njpatel/component-react.git",
+  "dependencies": {
+    "component-react": "*"
+  },
+  "scripts": {
+    "build": "npm install && component install && component build -v --use component-react"
+  }
+}

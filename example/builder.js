@@ -2,7 +2,7 @@
 
 var Builder = require('component-builder')
   , fs      = require('fs')
-  , react    = require('../')
+  , react    = require('component-react')
   ;
 
 var builder = new Builder(__dirname);
@@ -11,5 +11,6 @@ builder.use(react);
 
 builder.build(function(err, res){
   if (err) console.log(err);
-  fs.writeFileSync('build.js', res.require + res.js);
+  fs.mkdir('build',function() {});
+  fs.writeFileSync('build/build.js', res.require + res.js);
 });

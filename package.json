@@ -20,7 +20,7 @@
     "async": "~0.2.6",
     "react-tools": "*"
   },
-  "devDependencies" : {
+  "devDependencies": {
     "component-builder": "0.8.x"
   },
   "main": "index.js",

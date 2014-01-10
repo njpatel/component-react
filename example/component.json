@@ -1,5 +1,5 @@
 {
-  "name": "example",
-  "dependencies": {},
-  "react": ["index.jsx"]
+  "name": "component-react-example",
+  "paths": [ "components", "lib" ],
+  "local": [ "boot" ]
 }
