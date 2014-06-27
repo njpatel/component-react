@@ -3,5 +3,5 @@
   "dependencies": {
     "njpatel/react": "*"
   },
-  "scripts": [ "index.jsx", "button.js" ]
+  "scripts": [ "index.jsx", "button.jsx" ]
 }
