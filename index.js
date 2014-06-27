@@ -1,38 +1,34 @@
-// component-less was used as the base, so will be very similar to that
 
-var async = require('async')
-  , fs = require('fs')
-  , path = require('path')
-  , transform = require('react-tools').transform
-  ;
+var fs = require('fs'),
+    path = require('path'),
+    debug = require('debug')('component:jsx'),
+    transform = require('react-tools').transform;
 
-module.exports = function(builder, options) {
-  options = options || {};
+module.exports = function(builder) {
 
-  builder.hook('before scripts', function(builder, callback) {
-    var files = builder.config.react;
+  builder.hook('before scripts', function(pkg, next) {
 
-    if (!files) return callback();
+    var scripts = pkg.config.scripts;
+    if (!scripts) return next();
 
-    if (!builder.config.scripts)
-      builder.config.scripts = [];
+    var jsxFiles = scripts.filter(function(file) { return path.extname(file) == '.jsx'; });
 
-    async.each(files, function(file, done) {
-      var data = null
-        , orig = builder.path(file)
-        ;
- 
-      try {
-        data = fs.readFileSync(orig, 'utf8');
-      } catch(error) {
-        return done(new Error('Error while reading ' + orig + ':' + error));
-      }
- 
-      var newData = transform(data);
-      var newFile = path.basename(file, path.extname(file)) + '.js';
-      builder.addFile('scripts', newFile, newData);
+    jsxFiles.forEach(function(jsxFile) {
 
-      done();
-    }, callback);
+      var jsxPath = pkg.path(jsxFile);
+      var name = jsxFile.split('.')[0] + '.js';
+
+      debug('compiling: %s', jsxFile);
+
+      var jsx = fs.readFileSync(jsxPath, 'utf8');
+
+      pkg.addFile('scripts', name, transform(jsx));
+      pkg.removeFile('scripts', jsxFile);
+
+    });
+
+    next();
+
   });
-}
+
+};

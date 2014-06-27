@@ -1,6 +1,6 @@
 # component-react
 
-A plugin to transpile [React](https://github.com/facebook/react) javascript files ('.js' or '.jsx') for the component builder.
+A plugin to transpile [React](https://github.com/facebook/react) javascript files ('.jsx') for the component builder.
 
 ## Install
 
@@ -10,16 +10,11 @@ $ npm install component-react
 
 ## Usage
   
-Add your `.jsx` files to the `react` array in your `component.json`:
+Add your `.jsx` files to the `scripts` array in your `component.json`:
 
 ```javascript
 {
-  "scripts": [
-    "index.js"
-  ],
-  "react": [
-    "button.jsx"
-  ]
+  "scripts": ["index.jsx", "button.jsx"]
 }
 ```
 
@@ -57,6 +52,7 @@ builder.build(function (err, res) {
 ## Authors
 
 * Neil Jagdish Patel <njpatel@gmail.com>
+* Denny Shimkoski <denny.webdev@gmail.com>
 
 ## License
 
